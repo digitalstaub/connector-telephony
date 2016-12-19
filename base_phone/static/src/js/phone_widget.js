@@ -43,6 +43,7 @@ var FieldPhone = formwidgets.FieldChar.extend({
                 this.$el.find('#click2dial')
                     .text(click2dial_text)
                     .on('click', function(ev) {
+                        ev.preventDefault();
                         self.do_notify(
                             _t('Click2dial started'),
                             _t('Unhook your ringing phone'),
@@ -122,9 +123,11 @@ if(!core.form_widget_registry.get('fax')){
     core.form_widget_registry.add('fax', FieldFax);
 }
 
-if(!core.form_widget_registry.get('phone')){
-    core.form_widget_registry.add('phone', FieldPhone);
-}
+core.form_widget_registry.add('phone', FieldPhone);
+
+// if(!core.form_widget_registry.get('phone')){
+//     core.form_widget_registry.add('phone', FieldPhone);
+// }
 
 
 var treewidgets = require('web.ListView');

@@ -8,6 +8,9 @@
 <templates id="template" xml:space="preserve">
 
 <t t-name="FieldPhone" t-extend="FieldEmail">
+    <t t-jquery="span:first" t-operation="append">
+        <a t-if="widget.get('effective_readonly')" href="#" class="oe_form_uri" target="_blank"/>
+    </t>
     <t t-jquery="span:first">
         this.removeClass('oe_form_field_email').addClass('oe_form_field_phone');
     </t>

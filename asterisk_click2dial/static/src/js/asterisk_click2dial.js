@@ -24,6 +24,7 @@ click2dial.OpenCaller = Widget.extend({
     },
 
     on_open_caller: function (event) {
+        event.preventDefault();
         event.stopPropagation();
         var self = this;
         self.rpc('/asterisk_click2dial/get_record_from_my_channel', {}).done(function(r) {
