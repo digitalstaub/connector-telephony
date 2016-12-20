@@ -74,7 +74,8 @@ click2dial.OpenCaller = Widget.extend({
                 target: 'new',
                 If you want to use target: 'current', with web/enterprise,
                 you have to reload the Web page just after */
-                target: 'current',
+                target: 'new',
+                flags: {'form': {'action_buttons': true}},
                 context: {},
             };
             web_client.action_manager.do_action(action);
