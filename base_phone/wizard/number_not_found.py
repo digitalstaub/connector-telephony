@@ -79,7 +79,8 @@ class NumberNotFound(models.TransientModel):
             'res_model': 'res.partner',
             'type': 'ir.actions.act_window',
             'nodestroy': False,
-            'target': 'current',
+            'target': 'new',
+            'flags': {'form': {'action_buttons': 1}},
             'context': context,
         }
         return action
@@ -98,7 +99,8 @@ class NumberNotFound(models.TransientModel):
             'res_model': 'res.partner',
             'view_mode': 'form,tree,kanban',
             'nodestroy': False,
-            'target': 'current',
+            'target': 'new',
+            'flags': {'form': {'action_buttons': 1}},
             'res_id': wiz.to_update_partner_id.id,
             'context': self._context,
         }
