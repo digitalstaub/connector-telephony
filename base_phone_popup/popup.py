@@ -24,6 +24,7 @@ class PhoneCommon(models.AbstractModel):
                 'view_mode': 'form,tree',
                 'views': [[False, 'form']],  # Beurk, but needed
                 'target': 'new',
+                'flags': {'form': {'action_buttons': True}},
                 'res_id': record_res[1],
                 }
         else:
@@ -34,6 +35,7 @@ class PhoneCommon(models.AbstractModel):
                 'view_mode': 'form',
                 'views': [[False, 'form']],  # Beurk, but needed
                 'target': 'new',
+                'flags': {'form': {'action_buttons': True}},
                 'context': {'default_calling_number': number}
             }
         return action
