@@ -44,3 +44,4 @@ call agi script fromwithin your dialplan
 ``
 exten => s,1,AGI(odoo/openerp_popup_timeout.sh,<odoo-server>,<odoo-db>,<odoo-admin-user-id>,<odoo-admin-pass>,<username to notify>
 ``
+odoo admin user id is usually 1
