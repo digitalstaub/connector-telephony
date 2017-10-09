@@ -53,6 +53,7 @@ odoo.define('base_phone.phone_widget', function (require) {
                     .text(click2dial_text)
                     .attr('href', '#')
                     .on('click', function(ev) {
+                        ev.preventDefault()
                         self.do_notify(
                                 _t('Click2dial started'),
                                 _t('Unhook your ringing phone'),
@@ -100,8 +101,9 @@ odoo.define('base_phone.phone_widget', function (require) {
     }
 
     if(!core.form_widget_registry.get('phone')){
-        core.form_widget_registry.add('phone', FieldPhone);
     }
+    core.form_widget_registry.add('phone', FieldPhone);
+    // console.log('adding phone widget');
 
 
     var treewidgets = require('web.ListView');
